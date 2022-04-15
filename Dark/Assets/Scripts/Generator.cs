@@ -15,11 +15,12 @@ public class Generator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.TryGetComponent(out PlayerMove player))
+        if (col.TryGetComponent(out PlayerInventory inventory))
         {
             //TODO delete fuel from player inventory
-            AddFuel(0.1f);
-            Debug.Log("Add fuel, fuel is:" + _fuel);
+            if (inventory.TryGetItem(out float fuel))
+                AddFuel(fuel);
+            Debug.Log($"Add fuel: {fuel}, fuel is: {_fuel}");
         }
     }
 
