@@ -1,21 +1,50 @@
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private readonly List<float> _items = new List<float>{0.1f, 0.08f};
-
-    public bool TryGetItem(out float item)
+    private float _fuel = 0f;
+    private float Fuel
     {
-        if (_items.Count != 0)
+        get => _fuel;
+        set
         {
-            item = _items.Last();
-            _items.RemoveAt(_items.Count -1);
-            return true;
+            _fuel = (value >= maxFuelInInventory ? maxFuelInInventory : value);
+            fuelCountUI.text = ((int) (_fuel * 100)).ToString();
+        }
+    }
+
+    private readonly List<UpgradeItem> _upgrades = new List<UpgradeItem>();
+    [SerializeField] private Text fuelCountUI;
+    [SerializeField] private float maxFuelInInventory = 1;
+
+    public float GetFuel(float neededFuel)
+    {
+        if (neededFuel >= Fuel)
+        {
+            var res = Fuel;
+            Fuel = 0;
+            return res;
         }
 
-        item = 0;
-        return false;
+        Fuel -= neededFuel;
+        return neededFuel;
     }
+
+    public void AddFuel(float fuel)
+    {
+        Fuel += fuel;
+    }
+
+    private void Start()
+    {
+        Fuel = _fuel;
+    }
+}
+
+internal class UpgradeItem
+{
+    
 }

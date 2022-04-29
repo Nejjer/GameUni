@@ -8,25 +8,35 @@ public class Generator : MonoBehaviour
     private float _fuel = 1f;
     private float _maxFuel = 1f;
 
+    private float Fuel
+    {
+        get => _fuel;
+        set
+        {
+            if (value < 0)
+                return;
+            _fuel = value >= _maxFuel ? _maxFuel : value;
+            
+        }
+    }
+
     private void AddFuel(float value)
     {
-        _fuel = _fuel + value >= _maxFuel ? _maxFuel : _fuel + value;
+        Fuel += value;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.TryGetComponent(out PlayerInventory inventory))
         {
-            //TODO delete fuel from player inventory
-            if (inventory.TryGetItem(out float fuel))
-                AddFuel(fuel);
-            Debug.Log($"Add fuel: {fuel}, fuel is: {_fuel}");
+            Fuel += inventory.GetFuel(_maxFuel - _fuel);
+            Debug.Log($"Add fuel:, fuel is: {_fuel}");
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        _fuel -= spendingFuelPerSecond * Time.fixedDeltaTime;
+        Fuel -= spendingFuelPerSecond * Time.deltaTime;
         healthBar.fillAmount = _fuel;   
     }
 }
