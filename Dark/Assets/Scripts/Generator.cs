@@ -27,6 +27,6 @@ public class Generator : MonoBehaviour
     private void FixedUpdate()
     {
         _fuel -= spendingFuelPerSecond * Time.fixedDeltaTime;
-        healthBar.fillAmount = _fuel;
+        healthBar.fillAmount = _fuel;   
     }
 }
