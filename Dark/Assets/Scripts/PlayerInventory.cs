@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +5,7 @@ using UnityEngine.UI;
 public class PlayerInventory : MonoBehaviour
 {
     private float _fuel = 0f;
+
     private float Fuel
     {
         get => _fuel;
@@ -15,8 +15,19 @@ public class PlayerInventory : MonoBehaviour
             fuelCountUI.text = ((int) (_fuel * 100)).ToString();
         }
     }
+    private int _fixedItem;
+    private int FixedItem
+    {
+        get => _fixedItem;
+        set
+        {
+            _fixedItem = value;
+            fixedCountUI.text = _fixedItem.ToString();
+        }
+    }
 
-    private readonly List<UpgradeItem> _upgrades = new List<UpgradeItem>();
+    //private readonly List<FixedItem> _upgrades = new List<FixedItem>();
+    [SerializeField] private Text fixedCountUI;
     [SerializeField] private Text fuelCountUI;
     [SerializeField] private float maxFuelInInventory = 1;
 
@@ -38,13 +49,15 @@ public class PlayerInventory : MonoBehaviour
         Fuel += fuel;
     }
 
+    public void AddFixedItem()
+    {
+        FixedItem++;
+    }
+
     private void Start()
     {
+        FixedItem = _fixedItem;
         Fuel = _fuel;
     }
 }
 
-internal class UpgradeItem
-{
-    
-}
