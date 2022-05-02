@@ -341,10 +341,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -383,6 +385,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -2668,9 +2671,116 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      players blue x2_45: 6789091737791880881
+      players blue x2_44: 2880780254458699099
+      players blue x2_107: 83056284304993674
+      players blue x2_21: -3811841213934543937
+      players blue x2_53: -404625691421928317
+      players blue x2_49: 7911662828780443819
+      players blue x2_60: 2738956109440541999
+      players blue x2_66: -3089709668974504263
+      players blue x2_30: 569029097787546199
+      players blue x2_41: -6529539621864531433
+      players blue x2_46: -8373264783832766193
+      players blue x2_69: -7215039152748356380
+      players blue x2_48: 4282871627764735726
+      players blue x2_47: 8850987912020285427
+      players blue x2_59: -8418447768236171344
+      players blue x2_58: 4100152623249802994
+      players blue x2_13: 541701556701534767
+      players blue x2_79: 8579562124024133579
+      players blue x2_57: -4758180669809064961
+      players blue x2_5: -372862644943860230
+      players blue x2_87: -8826493173911862460
+      players blue x2_24: -7201492071726238584
+      players blue x2_94: 6113941620724961191
+      players blue x2_39: -3224343741028812653
+      players blue x2_84: 7262648407597358268
+      players blue x2_111: 3960697682090896159
+      players blue x2_20: 2852158332236174695
+      players blue x2_109: 7618908235044177879
+      players blue x2_51: -5674910008095186970
+      players blue x2_22: -7961646373234431619
+      players blue x2_34: 8503194791544126464
+      players blue x2_72: -445420063793051507
+      players blue x2_77: 8527395118307143833
+      players blue x2_65: -9135521722544757896
+      players blue x2_106: 4202994706326716945
+      players blue x2_27: 8438660000703589694
+      players blue x2_42: 9188522773434880
+      players blue x2_75: -5137787633525252619
+      players blue x2_97: 2103946562101137650
+      players blue x2_86: -5550534558042180697
+      players blue x2_28: 2139432192759025182
+      players blue x2_63: -2361395916547429103
+      players blue x2_64: -8368908073988724949
+      players blue x2_110: 2301045262902238774
+      players blue x2_4: 77051143012775586
+      players blue x2_108: -4055546369315467497
+      players blue x2_89: -2971930177751043928
+      players blue x2_85: 6603005733819060680
+      players blue x2_67: -2105645478597357542
+      players blue x2_83: -644310720072833203
+      players blue x2_93: -8599450292553722532
+      players blue x2_23: 3453084007008838239
+      players blue x2_56: 8066614986765074869
+      players blue x2_112: -8706884671555499168
+      players blue x2_68: -4897849201209999511
+      players blue x2_103: -3009764702012618211
+      players blue x2_43: 7071249841641762243
+      players blue x2_100: -8720267117480861317
+      players blue x2_98: 4405798764928488047
+      players blue x2_55: 1144365321224040703
+      players blue x2_104: -5301823823478532728
+      players blue x2_37: 8625913261636380459
+      players blue x2_11: 8522065335455037948
+      players blue x2_16: -151600182495412302
+      players blue x2_99: 8115393702815277064
+      players blue x2_76: -4382024326972090402
+      players blue x2_15: -7088146272199415242
+      players blue x2_71: 5755941753369753739
+      players blue x2_10: -5752040657354247570
+      players blue x2_105: -320660861767019785
+      players blue x2_52: -8927587892349394440
+      players blue x2_35: -8374724799626920770
+      players blue x2_19: 7848056339206519575
+      players blue x2_3: -2571709433908624807
+      players blue x2_26: -4409220056430452793
+      players blue x2_113: -1448832840706406642
+      players blue x2_38: 1980893256236795401
+      players blue x2_73: 5031992217752731713
+      players blue x2_101: 663188763025241084
+      players blue x2_50: -7356955238949380974
+      players blue x2_88: -101906612068142798
+      players blue x2_96: -3530201757408531505
+      players blue x2_40: -1627545317488600163
+      players blue x2_81: 6243420250001378667
+      players blue x2_82: 8893930743948484172
+      players blue x2_80: 4062777905854738986
+      players blue x2_36: 6233094026164042984
+      players blue x2_74: -820721517712365236
+      players blue x2_14: -8378246989036663693
+      players blue x2_18: -3943022887873207733
+      players blue x2_31: 5046409106002582655
+      players blue x2_25: -8972830398440389059
+      players blue x2_32: 4656916052513388904
+      players blue x2_62: -3787904428122879443
+      players blue x2_61: -6621681820735435076
+      players blue x2_17: -4982629310276951926
+      players blue x2_70: 3060599896849652017
+      players blue x2_102: -5550558576108739916
+      players blue x2_54: -3231486153586848177
+      players blue x2_92: 4347262961528664570
+      players blue x2_90: -2459800493882383292
+      players blue x2_12: -6654665636200754899
+      players blue x2_33: 4366333071474347162
+      players blue x2_78: 1675943105292693589
+      players blue x2_95: -6038123929199245076
+      players blue x2_29: -4112086926310471225
+      players blue x2_91: 5755449694425449365
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
