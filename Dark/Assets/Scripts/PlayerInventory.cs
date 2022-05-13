@@ -31,17 +31,17 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private Text fuelCountUI;
     [SerializeField] private float maxFuelInInventory = 1;
 
-    public float GetFuel(float neededFuel)
+    public float GetFuel(float requireFuel)
     {
-        if (neededFuel >= Fuel)
+        if (requireFuel >= Fuel)
         {
             var res = Fuel;
             Fuel = 0;
             return res;
         }
 
-        Fuel -= neededFuel;
-        return neededFuel;
+        Fuel -= requireFuel;
+        return requireFuel;
     }
 
     public void AddFuel(float fuel)
@@ -52,6 +52,18 @@ public class PlayerInventory : MonoBehaviour
     public void AddFixedItem()
     {
         FixedItem++;
+    }
+
+    public int GetFixedItem(int requireItems)
+    {
+        if (requireItems >= FixedItem)
+        {
+            var res = FixedItem;
+            FixedItem = 0;
+            return res;
+        }
+        FixedItem -= requireItems;
+        return requireItems;
     }
 
     private void Start()
