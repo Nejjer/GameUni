@@ -26,7 +26,6 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    //private readonly List<FixedItem> _upgrades = new List<FixedItem>();
     [SerializeField] private Text fixedCountUI;
     [SerializeField] private Text fuelCountUI;
     [SerializeField] private float maxFuelInInventory = 1;
@@ -49,9 +48,9 @@ public class PlayerInventory : MonoBehaviour
         Fuel += fuel;
     }
 
-    public void AddFixedItem()
+    public void AddFixedItem(int count)
     {
-        FixedItem++;
+        FixedItem += count;
     }
 
     public int GetFixedItem(int requireItems)
