@@ -22,7 +22,6 @@ public class PlayerMove : MonoBehaviour
             Flip(axisX);
             return Vector3.ClampMagnitude(dir, speed);
         }
-
     }
 
     private void FixedUpdate()
@@ -42,7 +41,8 @@ public class PlayerMove : MonoBehaviour
         {
             _rightFace = !_rightFace;
             scaler.x *= -1;
-        }else if(_rightFace && moveInput < 0)
+        }
+        else if (_rightFace && moveInput < 0)
         {
             _rightFace = !_rightFace;
             scaler.x *= -1;

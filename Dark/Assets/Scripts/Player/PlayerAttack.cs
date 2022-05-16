@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -25,8 +24,9 @@ public class PlayerAttack : MonoBehaviour
 
                 foreach (var enemy in enemies)
                 {
-                    enemy.GetComponent<Enemy>().GetDamage(damage);
+                    enemy.GetComponent<EntityHealth>().GetDamage(damage);
                 }
+
                 _lastTimeAttack = Time.time;
             }
         }

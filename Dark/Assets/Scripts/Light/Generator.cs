@@ -1,10 +1,14 @@
+using System;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class Generator : MonoBehaviour
 {
     [SerializeField] private float spendingFuelPerSecond = 0.01f;
     [SerializeField] private Image healthBar;
+    [SerializeField][Range(0,5)] private float maxLightIntensity;
+    private Light2D _light2D;
     private float _fuel = 1f;
     private float _maxFuel = 1f;
 
@@ -18,6 +22,11 @@ public class Generator : MonoBehaviour
             _fuel = value >= _maxFuel ? _maxFuel : value;
             
         }
+    }
+
+    private void Start()
+    {
+        _light2D = GetComponent<Light2D>();
     }
 
     private void AddFuel(float value)
@@ -37,6 +46,15 @@ public class Generator : MonoBehaviour
     private void Update()
     {
         Fuel -= spendingFuelPerSecond * Time.deltaTime;
-        healthBar.fillAmount = _fuel;   
+        healthBar.fillAmount = _fuel;
+        _light2D.intensity = MathIntensity(maxLightIntensity);
+    }
+
+    public float MathIntensity(float maxIntensity)
+    {
+        var b = -Math.Sqrt(maxIntensity);
+        var a = -b;
+        return (float)(-Math.Pow(a * Fuel + b, 2) + maxIntensity);
+        //See graph https://www.desmos.com/calculator/netyfxihwk?lang=ru
     }
 }
