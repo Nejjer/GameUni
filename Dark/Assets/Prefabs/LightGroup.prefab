@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5237681347226111313}
   - component: {fileID: 5237681347226111318}
   - component: {fileID: 5237681347226111319}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LightGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,6 +285,10 @@ PrefabInstance:
     - target: {fileID: 1767841445967529186, guid: 516b98e665e1f224a98f4215f5cb09ac, type: 3}
       propertyPath: m_Name
       value: fixedBUDKA90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767841445967529186, guid: 516b98e665e1f224a98f4215f5cb09ac, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1767841445967529197, guid: 516b98e665e1f224a98f4215f5cb09ac, type: 3}
       propertyPath: m_RootOrder

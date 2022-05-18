@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 6461510615020992517}
   - component: {fileID: 6461510615020992526}
   - component: {fileID: 6461510615020992521}
-  - component: {fileID: 6461510615020992527}
   - component: {fileID: 6461510615020992525}
   - component: {fileID: 6461510615020992524}
   - component: {fileID: 6461510615020992530}
   - component: {fileID: 6461510615020992531}
+  - component: {fileID: 7130254699527788716}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -33,12 +33,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6461510615020992516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.91, y: 0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6461510615020992523
 SpriteRenderer:
@@ -150,21 +150,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.34, y: 1.8}
   m_EdgeRadius: 0
---- !u!114 &6461510615020992527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6461510615020992516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec61d1456702494eabf1738f8ffede1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loot: {fileID: 2262871030027703493, guid: 996deb6aef7a2b747b2db685fd58c470, type: 3}
-  fuel: {fileID: 5151683220108994391, guid: b7368bd81efcb104592e5071e62fcb20, type: 3}
-  health: 20
 --- !u!114 &6461510615020992525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1
   damage: 10
-  player: {fileID: 0}
 --- !u!114 &6461510615020992524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3131f94a543b6844b03f96d6b0cafff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!50 &6461510615020992530
 Rigidbody2D:
   serializedVersion: 4
@@ -230,3 +213,18 @@ CircleCollider2D:
   m_Offset: {x: 0.6, y: 0}
   serializedVersion: 2
   m_Radius: 0.79
+--- !u!114 &7130254699527788716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461510615020992516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52aeb0f5e67d2744db240f5e949ad066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  loot: {fileID: 2262871030027703493, guid: 996deb6aef7a2b747b2db685fd58c470, type: 3}
+  fuel: {fileID: 5151683220108994391, guid: b7368bd81efcb104592e5071e62fcb20, type: 3}

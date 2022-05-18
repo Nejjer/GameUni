@@ -1,3 +1,4 @@
+using System;
 using Player;
 using UnityEngine;
 
@@ -6,13 +7,14 @@ public class EnemyAttack : MonoBehaviour
     private float _lastTimeAttack;
     [SerializeField] private float cooldown;
     [SerializeField] private int damage;
-    [SerializeField] private GameObject player;
+    private Animator _animator;
     private bool _isPlayerInTrigger;
     private PlayerHealth _playerHealth;
 
     private void Start()
     {
-        _playerHealth = player.GetComponent<PlayerHealth>();
+        _playerHealth =  GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
+        _animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -30,7 +32,10 @@ public class EnemyAttack : MonoBehaviour
     private void FixedUpdate()
     {
         if (_isPlayerInTrigger && Time.time - _lastTimeAttack >= cooldown)
+        {
             Attack();
+            _animator.SetTrigger("Attack");
+        }
     }
 
     private void Attack()
