@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -5,7 +6,11 @@ public class LightPole : MonoBehaviour
 {
     [SerializeField] private bool active;
     [SerializeField][Range(0,5)] private float maxIntensity;
+    [SerializeField] [Range(0, 1)] private float chanceUnstableLight = 0.3f;
     private Generator _generator;
+    private float _offsetIntensity;
+    // Setup light animation tables. 'a' is max darkness, 'z' is maxbright.
+    [SerializeField]private string animPatter = "mmamammmmammamamaaamammma";
 
     public bool Active
     {
@@ -21,12 +26,28 @@ public class LightPole : MonoBehaviour
     private void Start()
     {
         _light = GetComponent<Light2D>();
+        if (Random.Range(0f, 1f) <= chanceUnstableLight)
+            StartCoroutine(Animation());
         _generator = GameObject.FindGameObjectWithTag("Generator").GetComponent<Generator>();
         Active = active;
     }
 
     private void Update()
     {
-        _light.intensity = _generator.MathIntensity(maxIntensity);
+        _light.intensity = _generator.MathIntensity(maxIntensity) + _offsetIntensity;
+    }
+    
+    IEnumerator Animation()
+    {
+        yield return new WaitForSeconds(Random.Range(0f, 1f));
+        var i = 0;
+        while (true)
+        {
+            if (i + 1 == animPatter.Length)
+                yield return new WaitForSeconds(Random.Range(1f, 8f));
+            i = (i + 1) % animPatter.Length;
+            _offsetIntensity = maxIntensity / 100 * (animPatter[i] - 100);
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }

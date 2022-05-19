@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class LightGroup : MonoBehaviour
 {
-    [SerializeField] private int countForActivated;
+    [SerializeField] private int requiredСountForActivated;
     [SerializeField] private bool active;
+    private fixedBUDKAUI _budkaUI;
+    private int _currentCount = 0;
 
     private bool Active
     {
@@ -23,6 +25,8 @@ public class LightGroup : MonoBehaviour
     {
         _lightPoles = transform.GetComponentsInChildren<LightPole>();
         _collider = GetComponent<PolygonCollider2D>();
+        _budkaUI = transform.GetComponentInChildren<fixedBUDKAUI>();
+        _budkaUI.SetProgress(active ? requiredСountForActivated : 0, requiredСountForActivated);
         Active = active;
     }
 
@@ -31,8 +35,9 @@ public class LightGroup : MonoBehaviour
     {
         if (active != true)
         {
-            countForActivated -= inventory.GetFixedItem(countForActivated);
-            active = countForActivated <= 0;
+            _currentCount += inventory.GetFixedItem(requiredСountForActivated - _currentCount);
+            active = _currentCount >= requiredСountForActivated;
+            _budkaUI.SetProgress(_currentCount, requiredСountForActivated);
             if (active)
                 Active = active;
         }
