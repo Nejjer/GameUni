@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : EntityHealth
@@ -16,7 +14,9 @@ public class EnemyHealth : EntityHealth
     {
         _animator.SetTrigger("Death");
     }
-
+    
+    protected override void OnGetDamage() => _animator.SetTrigger("GetDamage");
+    
     public void Death()
     {
         Instantiate(Random.Range(0, 1) > 0.5 ? loot : fuel, transform.position, Quaternion.identity);

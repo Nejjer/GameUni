@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,8 +27,8 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    [SerializeField] private Text fixedCountUI;
-    [SerializeField] private Text fuelCountUI;
+    [SerializeField] private TextMeshProUGUI fixedCountUI;
+    [SerializeField] private TextMeshProUGUI fuelCountUI;
     [SerializeField] private float maxFuelInInventory = 1;
 
     public float GetFuel(float requireFuel)

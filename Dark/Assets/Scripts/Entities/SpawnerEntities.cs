@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -54,10 +55,21 @@ public class SpawnerEntities : MonoBehaviour
                     return;
                 }
             }
+            if (spawnIn == SpawnIn.Dark || spawnIn == SpawnIn.Anywhere)
+            {
+                Instantiate(spawnableObject, transform.position, Quaternion.identity);
+                return;
+            }
         }
     }
-    
-    
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, checkDarkRadius);
+    }
+
+
     enum SpawnIn
     {
         Dark,

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackRadius;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private int damage;
+    [SerializeField] private Image reloadBar;
     private float _lastTimeAttack;
     private Animator _animator;
 
@@ -32,6 +34,10 @@ public class PlayerAttack : MonoBehaviour
                 _lastTimeAttack = Time.time;
             }
         }
+        else
+        {
+            reloadBar.fillAmount = (Time.time - _lastTimeAttack) / cooldown;
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -39,4 +45,5 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRadius);
     }
+    
 }

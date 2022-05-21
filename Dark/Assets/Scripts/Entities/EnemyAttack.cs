@@ -33,12 +33,11 @@ public class EnemyAttack : MonoBehaviour
     {
         if (_isPlayerInTrigger && Time.time - _lastTimeAttack >= cooldown)
         {
-            Attack();
             _animator.SetTrigger("Attack");
         }
     }
 
-    private void Attack()
+    public void Attack()
     {
         _playerHealth.GetDamage(damage);
         _lastTimeAttack = Time.time;

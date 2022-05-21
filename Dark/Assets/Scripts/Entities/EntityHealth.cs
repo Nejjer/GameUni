@@ -1,22 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class EntityHealth : MonoBehaviour
 {
     [SerializeField] protected int health = 100;
+    [SerializeField] protected int currentHealth = 100;
 
     public void GetDamage(int damage)
     {
-        if (health > 0)
+        if (currentHealth > 0)
         {
-            health -= damage;
-            Debug.Log(health);
-            if (health <= 0)
+            currentHealth -= damage;
+            OnGetDamage();
+            Debug.Log(currentHealth);
+            if (currentHealth <= 0)
                 OnDeath();
         }
         
     }
 
     protected abstract void OnDeath();
+    protected abstract void OnGetDamage();
+
 }

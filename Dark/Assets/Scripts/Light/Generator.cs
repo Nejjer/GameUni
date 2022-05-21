@@ -8,6 +8,7 @@ public class Generator : MonoBehaviour
     [SerializeField] private float spendingFuelPerSecond = 0.01f;
     [SerializeField] private Image healthBar;
     [SerializeField][Range(0,5)] private float maxLightIntensity;
+    private Animator _animator;
     private Light2D _light2D;
     private float _fuel = 1f;
     private float _maxFuel = 1f;
@@ -20,25 +21,26 @@ public class Generator : MonoBehaviour
             if (value < 0)
                 return;
             _fuel = value >= _maxFuel ? _maxFuel : value;
-            
         }
     }
 
     private void Start()
     {
         _light2D = GetComponent<Light2D>();
+        _animator = GetComponent<Animator>();
     }
 
     private void AddFuel(float value)
     {
         Fuel += value;
+        if (value > 0) _animator.SetTrigger("AddFuel");
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.TryGetComponent(out PlayerInventory inventory))
         {
-            Fuel += inventory.GetFuel(_maxFuel - _fuel);
+            AddFuel(inventory.GetFuel(_maxFuel - _fuel));
             Debug.Log($"Add fuel:, fuel is: {_fuel}");
         }
     }
