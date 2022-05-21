@@ -18,7 +18,8 @@ public class LightPole : MonoBehaviour
         set
         {
             active = value;
-            _light.enabled = active;
+            if (_light)
+                _light.enabled = active;
         }
     }
 

@@ -8,13 +8,15 @@ public abstract class EntityHealth : MonoBehaviour
 
     public void GetDamage(int damage)
     {
-        health -= damage;
-        Debug.Log(health);
-        if (health <= 0)
+        if (health > 0)
         {
-            OnDeath();
+            health -= damage;
+            Debug.Log(health);
+            if (health <= 0)
+                OnDeath();
         }
+        
     }
 
-    public abstract void OnDeath();
+    protected abstract void OnDeath();
 }

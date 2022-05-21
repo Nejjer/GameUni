@@ -11,7 +11,8 @@ public class EnemyHealth : EntityHealth
     {
         _animator = GetComponent<Animator>();
     }
-    public override void OnDeath()
+
+    protected override void OnDeath()
     {
         _animator.SetTrigger("Death");
     }

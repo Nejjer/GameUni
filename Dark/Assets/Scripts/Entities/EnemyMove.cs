@@ -1,11 +1,14 @@
-using System;
+using Player;
 using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
     private Transform _playerTransform;
     private Rigidbody2D _rb;
+    private SpriteRenderer _renderer;
     private bool _canMove = false;
+    private PlayerHealth _playerHealth;
+    
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -22,13 +25,20 @@ public class EnemyMove : MonoBehaviour
 
     private void Start()
     {
-        _playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        var player = GameObject.FindWithTag("Player");
+        _playerTransform = player.GetComponent<Transform>();
+        _playerHealth = player.GetComponent<PlayerHealth>();
         _rb = GetComponent<Rigidbody2D>();
+        _renderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
     {
-        _rb.velocity = _canMove ? (_playerTransform.position - transform.position).normalized : Vector2.zero;
+        var vectorToPlayer = _playerHealth.IsAlive
+            ? (_playerTransform.position - transform.position).normalized
+            : -(_playerTransform.position - transform.position).normalized;
+        _rb.velocity = !_playerHealth.IsAlive || _canMove ? vectorToPlayer : Vector2.zero;
+        _renderer.flipX = vectorToPlayer.x < 0;
     }
 
     public void Spawn()

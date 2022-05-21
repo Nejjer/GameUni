@@ -1,15 +1,20 @@
 using System;
+using Player;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float speed = 3f;
+    private PlayerHealth _health;
     private Rigidbody2D _rb;
     private bool _rightFace = true;
+    private Animator _animator;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _health = GetComponent<PlayerHealth>();
     }
 
     private Vector2 MovementVector
@@ -18,6 +23,7 @@ public class PlayerMove : MonoBehaviour
         {
             var axisX = Input.GetAxis("Horizontal") * speed;
             var axisY = Input.GetAxis("Vertical") * speed;
+            _animator.SetBool("Run", axisX != 0 || axisY != 0);
             Vector2 dir = new Vector2(axisX, axisY);
             Flip(axisX);
             return Vector3.ClampMagnitude(dir, speed);
@@ -31,7 +37,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Move()
     {
-        _rb.velocity = transform.TransformDirection(MovementVector);
+        _rb.velocity = _health.IsAlive ? transform.TransformDirection(MovementVector) : Vector2.zero;
     }
 
     private void Flip(float moveInput)

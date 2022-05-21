@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private float _lastTimeAttack;
     [SerializeField] private float cooldown;
     [SerializeField] private Transform attackPos;
     [SerializeField] private float attackRadius;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private int damage;
+    private float _lastTimeAttack;
+    private Animator _animator;
 
     private void Start()
     {
         _lastTimeAttack = Time.time;
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -20,8 +22,8 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
+                _animator.SetTrigger("Attack");
                 var enemies = Physics2D.OverlapCircleAll(attackPos.position, attackRadius, enemyLayer);
-
                 foreach (var enemy in enemies)
                 {
                     enemy.GetComponent<EntityHealth>().GetDamage(damage);
