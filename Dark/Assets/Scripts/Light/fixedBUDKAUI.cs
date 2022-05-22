@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class fixedBUDKAUI : MonoBehaviour
 {
     [SerializeField] private Text text;
+    [SerializeField] private GameObject textContainer;
     [SerializeField] private Vector3 offset;
     private Camera _camera;
 
@@ -14,7 +15,7 @@ public class fixedBUDKAUI : MonoBehaviour
 
     private void Update()
     {
-        text.transform.position = _camera.WorldToScreenPoint(transform.position + offset);
+        textContainer.transform.position = _camera.WorldToScreenPoint(transform.position + offset);
     }
 
     public void SetProgress(int currentItems, int requiredItems)
