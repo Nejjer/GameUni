@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aeb0f5e67d2744db240f5e949ad066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  currentHealth: 50
+  health: 10
+  currentHealth: 10
   loot: {fileID: 2262871030027703493, guid: 996deb6aef7a2b747b2db685fd58c470, type: 3}
   fuel: {fileID: 5151683220108994391, guid: b7368bd81efcb104592e5071e62fcb20, type: 3}
