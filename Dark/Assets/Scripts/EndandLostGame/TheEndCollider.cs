@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TheEnd : MonoBehaviour
+public class TheEndCollider : MonoBehaviour
 {
     [SerializeField]private GameObject theEndText;
     
@@ -8,7 +8,7 @@ public class TheEnd : MonoBehaviour
     {
         if (col.collider.CompareTag("Player"))
         {
-            theEndText.SetActive(true);
+            EventManager.SendEndGame();
         }
     }
 }

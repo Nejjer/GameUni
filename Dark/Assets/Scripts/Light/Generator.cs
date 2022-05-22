@@ -50,6 +50,7 @@ public class Generator : MonoBehaviour
         Fuel -= spendingFuelPerSecond * Time.deltaTime;
         healthBar.fillAmount = _fuel;
         _light2D.intensity = MathIntensity(maxLightIntensity);
+        if (Fuel <= 0) EventManager.SendRestartGame();
     }
 
     public float MathIntensity(float maxIntensity)

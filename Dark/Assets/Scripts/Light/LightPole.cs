@@ -8,7 +8,7 @@ public class LightPole : MonoBehaviour
     [SerializeField][Range(0,5)] private float maxIntensity;
     [SerializeField] [Range(0, 1)] private float chanceUnstableLight = 0.3f;
     private Generator _generator;
-    private float _offsetIntensity;
+    private float _deltaIntensity;
     // Setup light animation tables. 'a' is max darkness, 'z' is maxbright.
     [SerializeField]private string animPatter = "mmamammmmammamamaaamammma";
 
@@ -35,7 +35,7 @@ public class LightPole : MonoBehaviour
 
     private void Update()
     {
-        _light.intensity = _generator.MathIntensity(maxIntensity) + _offsetIntensity;
+        _light.intensity = _generator.MathIntensity(maxIntensity) + _deltaIntensity;
     }
     
     IEnumerator Animation()
@@ -45,9 +45,12 @@ public class LightPole : MonoBehaviour
         while (true)
         {
             if (i + 1 == animPatter.Length)
+            {
+                _deltaIntensity = 0f;
                 yield return new WaitForSeconds(Random.Range(1f, 8f));
+            }
             i = (i + 1) % animPatter.Length;
-            _offsetIntensity = maxIntensity / 100 * (animPatter[i] - 100);
+            _deltaIntensity = maxIntensity / 100 * (animPatter[i] - 100);
             yield return new WaitForSeconds(0.1f);
         }
     }

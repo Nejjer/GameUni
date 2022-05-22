@@ -8,7 +8,6 @@ namespace Player
 {
     public class PlayerHealth : EntityHealth
     {
-        [SerializeField] private float delayReloadScene = 3;
         [SerializeField] private Image HPBar;
         private Rigidbody2D _rigidbody;
         private Animator _animator;
@@ -24,17 +23,11 @@ namespace Player
         {
             _animator.SetTrigger("Death");
             _isAlive = false;
+            EventManager.SendRestartGame();
         }
 
         protected override void OnGetDamage() => HPBar.fillAmount = (float)currentHealth / health;
-        public void Death() => StartCoroutine(ReloadScene());
-
         public void AddHeath(int addedHealth) => currentHealth += addedHealth;
 
-        IEnumerator ReloadScene()
-        {
-            yield return new WaitForSeconds(delayReloadScene);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 }

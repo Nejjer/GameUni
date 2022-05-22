@@ -8,6 +8,7 @@ public class EnemyHealth : EntityHealth
     void Start()
     {
         _animator = GetComponent<Animator>();
+        EventManager.OnEndGame.AddListener(OnDeath);
     }
 
     protected override void OnDeath()
