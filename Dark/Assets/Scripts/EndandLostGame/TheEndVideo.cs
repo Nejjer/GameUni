@@ -26,6 +26,8 @@ public class TheEndVideo : MonoBehaviour
                 StartCoroutine(GoToMenu());
             _videoPlayer.Pause();
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     IEnumerator GoToMenu()
