@@ -20,7 +20,7 @@ public class EnemyHealth : EntityHealth
     
     public void Death()
     {
-        Instantiate(Random.Range(0, 1) > 0.5 ? loot : fuel, transform.position, Quaternion.identity);
+        Instantiate(Random.Range(0f, 1f) > 0.5 ? loot : fuel, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

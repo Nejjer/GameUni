@@ -12,7 +12,7 @@ public class CameraMove : MonoBehaviour
         _playerTransform = player.GetComponent<Transform>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         var position = _playerTransform.position;
         var target = new Vector3

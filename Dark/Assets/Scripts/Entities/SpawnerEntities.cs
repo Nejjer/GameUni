@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -14,6 +13,7 @@ public class SpawnerEntities : MonoBehaviour
     [SerializeField] private float checkDarkRadius;
     [SerializeField] private int countTryingSpawn;
     [SerializeField] private float darkScope;
+
 
     private void Start()
     {
@@ -67,6 +67,7 @@ public class SpawnerEntities : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, checkDarkRadius);
+        Gizmos.DrawWireCube(transform.position, new Vector3(fieldHeight, fieldWidth));
     }
 
 

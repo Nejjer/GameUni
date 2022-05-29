@@ -21,7 +21,7 @@ public class fixedBUDKAUI : MonoBehaviour
     public void SetProgress(int currentItems, int requiredItems)
     {
         if (currentItems == requiredItems)
-            text.enabled = false;
+            textContainer.SetActive(false);
         text.text = $"{currentItems}/{requiredItems}";
     }
 }

@@ -5,5 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class RestartGameText : MonoBehaviour
 {
-    public void RestartGame() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    public void RestartGame()
+    {
+        Debug.Log("Restart");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

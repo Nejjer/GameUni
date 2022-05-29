@@ -10,11 +10,13 @@ public class EnemyAttack : MonoBehaviour
     private Animator _animator;
     private bool _isPlayerInTrigger;
     private PlayerHealth _playerHealth;
+    private AudioSource _audio;
 
     private void Start()
     {
         _playerHealth =  GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
         _animator = GetComponent<Animator>();
+        _audio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -34,12 +36,14 @@ public class EnemyAttack : MonoBehaviour
         if (_isPlayerInTrigger && Time.time - _lastTimeAttack >= cooldown)
         {
             _animator.SetTrigger("Attack");
+            _lastTimeAttack = Time.time;
         }
     }
 
+    public void PlayAttackSound() => _audio.Play();
+    
     public void Attack()
     {
-        _playerHealth.GetDamage(damage);
-        _lastTimeAttack = Time.time;
+        if (_isPlayerInTrigger) _playerHealth.GetDamage(damage);
     }
 }

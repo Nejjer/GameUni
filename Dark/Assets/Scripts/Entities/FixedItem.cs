@@ -9,7 +9,7 @@ public class FixedItem : MonoBehaviour
 
     private void Start()
     {
-        _count = Random.Range(0, maxCount);
+        _count = Random.Range(1, maxCount);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

@@ -35,7 +35,7 @@ Transform:
   - {fileID: 1886401014579560444}
   - {fileID: 9086539664727923980}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &654635703787256867
 PolygonCollider2D:
@@ -133,6 +133,98 @@ PrefabInstance:
     - target: {fileID: 2066128512371984670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432717879269570289, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670576635257475543, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670576635257475543, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670576635257475543, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195755782930989670, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797586166353510025, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797586166353510025, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797586166353510025, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506657332062458307, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506657332062458307, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506657332062458307, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8929233039437313025, guid: 4bb76ef8dc2c1f14a94135e8781577d3, type: 3}
       propertyPath: m_Name

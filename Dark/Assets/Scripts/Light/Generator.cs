@@ -19,7 +19,7 @@ public class Generator : MonoBehaviour
         set
         {
             if (value < 0)
-                return;
+                _fuel = 0;
             _fuel = value >= _maxFuel ? _maxFuel : value;
         }
     }

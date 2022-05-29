@@ -26,8 +26,21 @@ namespace Player
             EventManager.SendRestartGame();
         }
 
-        protected override void OnGetDamage() => HPBar.fillAmount = (float)currentHealth / health;
-        public void AddHeath(int addedHealth) => currentHealth += addedHealth;
+        protected override void OnGetDamage() => UpdateHpBar();
 
+        public void AddHeath(int addedHealth)
+        {
+            if (currentHealth + addedHealth <= health)
+                currentHealth += addedHealth;
+            else
+                currentHealth = health;
+            UpdateHpBar();
+        }
+
+        private void UpdateHpBar()
+        {
+            HPBar.fillAmount = (float) currentHealth / health;
+            Debug.Log((float) currentHealth / health);
+        }
     }
 }

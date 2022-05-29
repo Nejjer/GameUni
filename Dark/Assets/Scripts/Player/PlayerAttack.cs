@@ -11,11 +11,14 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Image reloadBar;
     private float _lastTimeAttack;
     private Animator _animator;
+    private AudioSource _audio;
 
     private void Start()
     {
         _lastTimeAttack = Time.time;
         _animator = GetComponent<Animator>();
+        _audio = GetComponent<AudioSource>();
+
     }
 
     private void Update()
@@ -25,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 _animator.SetTrigger("Attack");
+                _audio.Play();
                 var enemies = Physics2D.OverlapCircleAll(attackPos.position, attackRadius, enemyLayer);
                 foreach (var enemy in enemies)
                 {

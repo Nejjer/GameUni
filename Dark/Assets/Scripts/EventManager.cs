@@ -11,6 +11,7 @@ public class EventManager
     public static void SendRestartGame()
     {
         OnRestartGame.Invoke();
+        Debug.Log("Send restart event");
     }
     public static void SendEndGame()
     {
