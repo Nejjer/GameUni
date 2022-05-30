@@ -15,10 +15,8 @@ public abstract class EntityHealth : MonoBehaviour
             if (currentHealth <= 0)
                 OnDeath();
         }
-        
     }
 
     protected abstract void OnDeath();
     protected abstract void OnGetDamage();
-
 }

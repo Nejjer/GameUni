@@ -8,10 +8,7 @@ public class fixedBUDKAUI : MonoBehaviour
     [SerializeField] private Vector3 offset;
     private Camera _camera;
 
-    private void Start()
-    {
-        _camera = Camera.main;
-    }
+    private void Start() => _camera = Camera.main;
 
     private void Update()
     {

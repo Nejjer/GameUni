@@ -8,7 +8,7 @@ public class EnemyMove : MonoBehaviour
     private SpriteRenderer _renderer;
     private bool _canMove = false;
     private PlayerHealth _playerHealth;
-    
+
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -41,8 +41,5 @@ public class EnemyMove : MonoBehaviour
         _renderer.flipX = vectorToPlayer.x < 0;
     }
 
-    public void Spawn()
-    {
-        _canMove = true;
-    }
+    public void Spawn() => _canMove = true;
 }

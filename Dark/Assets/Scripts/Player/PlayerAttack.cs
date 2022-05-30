@@ -18,7 +18,6 @@ public class PlayerAttack : MonoBehaviour
         _lastTimeAttack = Time.time;
         _animator = GetComponent<Animator>();
         _audio = GetComponent<AudioSource>();
-
     }
 
     private void Update()
@@ -49,5 +48,4 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRadius);
     }
-    
 }

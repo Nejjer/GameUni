@@ -7,7 +7,7 @@ public class Generator : MonoBehaviour
 {
     [SerializeField] private float spendingFuelPerSecond = 0.01f;
     [SerializeField] private Image healthBar;
-    [SerializeField][Range(0,5)] private float maxLightIntensity;
+    [SerializeField] [Range(0, 5)] private float maxLightIntensity;
     private Animator _animator;
     private Light2D _light2D;
     private float _fuel = 1f;
@@ -57,7 +57,7 @@ public class Generator : MonoBehaviour
     {
         var b = -Math.Sqrt(maxIntensity);
         var a = -b;
-        return (float)(-Math.Pow(a * Fuel + b, 2) + maxIntensity);
+        return (float) (-Math.Pow(a * Fuel + b, 2) + maxIntensity);
         //See graph https://www.desmos.com/calculator/netyfxihwk?lang=ru
     }
 }

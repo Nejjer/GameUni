@@ -20,12 +20,13 @@ public class TheEndVideo : MonoBehaviour
 
     private void Update()
     {
-        if (_videoPlayer.frame >= (long)_videoPlayer.frameCount - 4)
+        if (_videoPlayer.frame >= (long) _videoPlayer.frameCount - 4)
         {
             if (!_videoPlayer.isPaused)
                 StartCoroutine(GoToMenu());
             _videoPlayer.Pause();
         }
+
         if (Input.GetKeyDown(KeyCode.Space))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }

@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
-        _playerHealth =  GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
+        _playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
         _animator = GetComponent<Animator>();
         _audio = GetComponent<AudioSource>();
     }
@@ -41,7 +41,7 @@ public class EnemyAttack : MonoBehaviour
     }
 
     public void PlayAttackSound() => _audio.Play();
-    
+
     public void Attack()
     {
         if (_isPlayerInTrigger) _playerHealth.GetDamage(damage);

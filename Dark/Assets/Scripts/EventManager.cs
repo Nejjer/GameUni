@@ -13,6 +13,7 @@ public class EventManager
         OnRestartGame.Invoke();
         Debug.Log("Send restart event");
     }
+
     public static void SendEndGame()
     {
         OnEndGame.Invoke();

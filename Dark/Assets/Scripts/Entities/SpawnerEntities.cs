@@ -15,10 +15,7 @@ public class SpawnerEntities : MonoBehaviour
     [SerializeField] private float darkScope;
 
 
-    private void Start()
-    {
-        StartCoroutine(SpawnCoroutine());
-    }
+    private void Start() => StartCoroutine(SpawnCoroutine());
 
     IEnumerator SpawnCoroutine()
     {
@@ -41,7 +38,7 @@ public class SpawnerEntities : MonoBehaviour
             {
                 if (item.TryGetComponent(out Light2D light))
                 {
-                    if (light.intensity <= darkScope && spawnIn == SpawnIn.Dark 
+                    if (light.intensity <= darkScope && spawnIn == SpawnIn.Dark
                         || light.intensity > darkScope && spawnIn == SpawnIn.Light
                         || spawnIn == SpawnIn.Anywhere)
                     {
@@ -55,6 +52,7 @@ public class SpawnerEntities : MonoBehaviour
                     return;
                 }
             }
+
             if (spawnIn == SpawnIn.Dark || spawnIn == SpawnIn.Anywhere)
             {
                 Instantiate(spawnableObject, transform.position, Quaternion.identity);

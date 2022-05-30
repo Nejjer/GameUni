@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
         PlaySound();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    
+
     public void ExitGame()
     {
         Debug.Log("Exit Game");

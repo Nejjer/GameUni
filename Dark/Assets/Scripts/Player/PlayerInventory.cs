@@ -16,7 +16,9 @@ public class PlayerInventory : MonoBehaviour
             fuelCountUI.text = ((int) (_fuel * 100)).ToString();
         }
     }
+
     private int _fixedItem;
+
     private int FixedItem
     {
         get => _fixedItem;
@@ -62,6 +64,7 @@ public class PlayerInventory : MonoBehaviour
             FixedItem = 0;
             return res;
         }
+
         FixedItem -= requireItems;
         return requireItems;
     }
@@ -72,4 +75,3 @@ public class PlayerInventory : MonoBehaviour
         Fuel = _fuel;
     }
 }
-
