@@ -178,5 +178,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   maxIntensity: 1.8
-  chanceUnstableLight: 0.3
+  chanceUnstableLight: 0.12
   animPatter: mmamammmmammamamaaamammma
